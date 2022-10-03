@@ -3,6 +3,7 @@
 #include "UI/UA3PlayerHUDWidget.h"
 #include "Components/UA3HealthComponent.h"
 #include "Components/UA3WeaponComponent.h"
+#include "Components/UA3UIHelperComponent.h"
 #include "UA3Utils.h"
 #include "Components/ProgressBar.h"
 #include "Player/UA3PlayerState.h"
@@ -175,5 +176,24 @@ int32 UUA3PlayerHUDWidget::IsScoresCalled() const
     const auto HealthComponent = UA3Utils::GetUA3PlayerComponent<UUA3HealthComponent>(GetOwningPlayerPawn());
     if (!HealthComponent)
         return 0;
+
     return HealthComponent->GetScoresValue();
+}
+
+bool UUA3PlayerHUDWidget::GetPickupUIData(FPickupUIData& PickupUI) const
+{
+    const auto UIHelper = UA3Utils::GetUA3PlayerComponent<UUA3UIHelperComponent>(GetOwningPlayerPawn());
+    if (!UIHelper)
+        return false;
+
+    return UIHelper->GetPickupUIData(PickupUI);
+}
+
+bool UUA3PlayerHUDWidget::GetPickupAdded() const
+{
+    const auto UIHelper = UA3Utils::GetUA3PlayerComponent<UUA3UIHelperComponent>(GetOwningPlayerPawn());
+    if (!UIHelper)
+        return false;
+
+    return UIHelper->GetPickupAdded();
 }

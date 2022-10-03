@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "UA3CoreTypes.h"
 #include "UA3BasePickup.generated.h"
 
 class USphereComponent;
@@ -26,6 +27,9 @@ protected:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pickup")
     float RespawnTime = 5.0f;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "UI")
+    FPickupUIData PickupUIData;
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound")
     USoundCue* PickTakenSound;

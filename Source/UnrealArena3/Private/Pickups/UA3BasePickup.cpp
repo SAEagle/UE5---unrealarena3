@@ -51,6 +51,7 @@ bool AUA3BasePickup::CouldBeTaken() const
     return !GetWorldTimerManager().IsTimerActive(RespawnTimerHandle);
 }
 
+
 bool AUA3BasePickup::GivePickupTo(APawn* PlayerPawn)
 {
     return false;
@@ -87,3 +88,4 @@ void AUA3BasePickup::GenerateRotationYaw()
     const auto Direction = FMath::RandBool() ? 1.0f : -1.0f;
     RotationYaw = FMath::RandRange(1.0f, 2.0f) * Direction;
 }
+

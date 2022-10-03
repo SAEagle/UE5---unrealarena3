@@ -8,6 +8,7 @@
 
 class UUA3HealthComponent;
 class UUA3WeaponComponent;
+class UUA3UIHelperComponent;
 class USoundCue;
 
 UCLASS()
@@ -24,6 +25,9 @@ protected:
 
     UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
     UUA3WeaponComponent* WeaponComponent;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components")
+    UUA3UIHelperComponent* UIHelperComponent;
 
     UPROPERTY(EditDefaultsOnly, Category = "Animation")
     UAnimMontage* DeathAnimMontage;

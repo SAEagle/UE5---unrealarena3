@@ -8,6 +8,7 @@
 #include "Components/UA3HealthComponent.h"
 #include "Components/TextRenderComponent.h"
 #include "Components/UA3WeaponComponent.h"
+#include "Components/UA3UIHelperComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "UA3BaseCharacter.h"
 #include "GameFramework/Controller.h"
@@ -23,6 +24,7 @@ AUA3BaseCharacter::AUA3BaseCharacter(const FObjectInitializer& ObjInit)
 
     HealthComponent = CreateDefaultSubobject<UUA3HealthComponent>("HealthComponent");
     WeaponComponent = CreateDefaultSubobject<UUA3WeaponComponent>("WeaponComponent");
+    UIHelperComponent = CreateDefaultSubobject<UUA3UIHelperComponent>("UIHelperComponent");
 }
 
 void AUA3BaseCharacter::BeginPlay()

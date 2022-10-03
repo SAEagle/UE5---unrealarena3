@@ -6,6 +6,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Components/UA3WeaponComponent.h"
 #include "Components/UA3HealthComponent.h"
+#include "Components/UA3UIHelperComponent.h"
 #include "Components/SphereComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Player/UA3PlayerState.h"

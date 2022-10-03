@@ -139,3 +139,16 @@ struct FLevelData
 };
 
 DECLARE_MULTICAST_DELEGATE_OneParam(FOnLevelSelectedSignature, const FLevelData&);
+
+// pickup
+USTRUCT(BlueprintType)
+struct FPickupUIData
+{
+    GENERATED_USTRUCT_BODY()
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "UI")
+    FName PickName = NAME_None;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "UI")
+    UTexture2D* PickIcon;
+};

@@ -2,6 +2,7 @@
 
 #include "Pickups/UA3HealthPickup.h"
 #include "Components/UA3HealthComponent.h"
+#include "Components/UA3UIHelperComponent.h"
 #include "UA3Utils.h"
 
 DEFINE_LOG_CATEGORY_STATIC(LogHealthPickup, All, All);
@@ -9,12 +10,17 @@ DEFINE_LOG_CATEGORY_STATIC(LogHealthPickup, All, All);
 bool AUA3HealthPickup::GivePickupTo(APawn* PlayerPawn)
 {
     const auto HealthComponent = UA3Utils::GetUA3PlayerComponent<UUA3HealthComponent>(PlayerPawn);
-    if (!HealthComponent || HealthComponent->IsDead())
+    const auto UIHelper = UA3Utils::GetUA3PlayerComponent<UUA3UIHelperComponent>(PlayerPawn);
+    if (!HealthComponent || HealthComponent->IsDead() || !UIHelper)
         return false;
     else if (HealthComponent && IsItArmor == 0)
+    {
+        UIHelper->SetPickUIData(PickupUIData);
         return HealthComponent->TryToHeal(HealthAmount);
+    }
 
-    // UE_LOG(LogHealthPickup, Display, TEXT("Player was healed!"));
     else
+        UIHelper->SetPickUIData(PickupUIData);
         return HealthComponent->TryToAddArmor(ArmorAmount);
+    //  UE_LOG(LogHealthPickup, Display, TEXT("Player was healed!"));
 }

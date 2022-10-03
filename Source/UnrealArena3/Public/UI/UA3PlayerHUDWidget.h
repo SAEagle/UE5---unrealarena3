@@ -60,6 +60,12 @@ public:
     UFUNCTION(BlueprintCallable, Category = "UI")
     int32 IsScoresCalled() const;
 
+    UFUNCTION(BlueprintCallable, Category = "UI")
+    bool GetPickupUIData(FPickupUIData& PickupUI) const;
+
+    UFUNCTION(BlueprintCallable, Category = "UI")
+    bool GetPickupAdded() const;
+
 protected:
     UPROPERTY(meta = (BindWidget))
     UProgressBar* HealthProgressBar;
