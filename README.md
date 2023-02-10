@@ -1,5 +1,5 @@
 # [Unreal Arena 3](https://github.com/SAEagle/unrealarena3)
-<img width="365" alt="Splash" src="https://user-images.githubusercontent.com/5038930/190905057-5dbc8f95-51a2-4ff7-a1fd-076510c0de23.png">
+<img width="365" alt="Splash" src="https://user-images.githubusercontent.com/5038930/218118423-8ee1dfe0-914a-4756-b017-cc9d550a6ed9.gif">
 
 The main goal of this project is to recreate Quake3 Arena in the UE5. 
 At maximum add the multiplayer support. But at the current stage, there are a lot of needs to be done from the effects and the character animations. 
@@ -9,9 +9,9 @@ For the beginning, I will use retargeting for the animations from UE engine samp
 Later I'll need to manually reframe original animations for every bot character to the rigged skeletons. 
 
 Simple goals breakdown of the project:
-- [x] Move all the geometry with material to UE5
+- [x] Move all the geometry with materials to UE5
 - [ ] Recreate all VFX with Niagara(current stage - placeholders or test versions)
-- [ ] Recreate character animations
+- [ ] Recreate character animations - in progress
 - [ ] Local Multiplayer support
 - [ ] Improve Bot logic
 
